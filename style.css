@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to top right, #050018, #3d1752);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-ring {
+    height: 50vh;
+    width: 50vh;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3f3ce0, #f11b1b, #ef42f1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.300);
+}
+
+.clock-body {
+    height: 46vh;
+    width: 46vh;
+    position: absolute;
+    background: #212320;
+    box-shadow: inset 0 0 100px rgba(3, 0, 0, 0.352);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul > * {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: rotate(calc(30deg * var(--n)));
+    inset: 3px;
+}
+
+ul li span {
+    transform: rotate(calc(-30deg * var(--n)));
+    position: absolute;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.277);
+    font-size: 24px;
+    color: white;
+}
+
+.Hands {
+    position: relative;
+}
+
+.Hands > * {
+    transform-origin: bottom;
+    bottom: 3px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 0 18px 2px rgba(255, 255, 255, 0.185);
+}
+
+
+.Hhand {
+    height: 10vh;
+    width: 5.4px;
+    background-color: #14ff33;
+}
+
+.Mhand {
+    height: 13vh;
+    width: 5px;
+    background-color: #d633c0;
+}
+
+.Shand {
+    height: 15.5vh;
+    width: 4px;
+    background-color: #2dff85;
+}
+
+.Dot {
+    height: 8px;
+    width: 8px;
+    background-color: #221f1f;
+    border-radius: 50%;
+    transform: translate(50%, calc(50% - 8px));
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 5px 2px white;
+}
+
+@media screen and (max-width: 500px) {
+    .clock-ring {
+        height: 80vw;
+        width: 80vw;
+    }
+
+    .clock-body {
+        height: 74vw;
+        width: 74vw;
+    }
+
+    .Hhand {
+        height: 15vw;
+    }
+
+    .Mhand {
+        height: 18vw;
+    }
+
+    .Shand {
+        height: 30vw;
+    }
+}
